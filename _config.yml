@@ -25,7 +25,7 @@ url                      : "https://dldbdud314.github.io" # the base hostname & 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "https://user-images.githubusercontent.com/57944099/98616082-60ddea00-233f-11eb-9ed2-88f0d949aea3.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : "https://user-images.githubusercontent.com/57944099/98616494-3f313280-2340-11eb-9d22-877597980fc4.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
