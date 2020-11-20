@@ -46,8 +46,7 @@ DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("ref
 ## 1️⃣ 데이터 읽는 방식
 일회성으로 읽어 들이는지 지속적으로 읽어 들이는지에 따라 크게 두가지 방식으로 나눌 수 있습니다   
 1. 데이터 한번 읽기
-해당 방식은 지정된 경로에서 해당 위치의 모든 데이터를 포함하는 정적 스냅샷(DataSnapshot)을 찍습니다.   
-데이터를 읽어들이면 DataSnapshot의 형태로 이를 받을 수 있습니다.     
+해당 방식은 지정된 경로에서 해당 위치의 모든 데이터를 포함하는 정적 스냅샷(DataSnapshot)을 찍습니다. 데이터를 읽어들이면 DataSnapshot의 형태로 이를 받을 수 있습니다.     
 📘 [DataSnapshot 참고 자료](https://firebase.google.com/docs/reference/android/com/google/firebase/database/DataSnapshot)
 
 2. 이벤트 수신 대기
@@ -95,5 +94,7 @@ reference.ChildAdded += (object sender, ChildChangedEventArgs args) =>
       Debug.Log("이름: " + people["name"] + ", 나이: " + people["age"]);
 };
 ```
-- 만약 reference보다 뎁스가 있는 곳을 참조하고 싶으면 reference.Child(string)으로 할 수 있습니다.
+- 만약 reference보다 더 깊은 뎁스를 참조하고 싶으면 reference.Child(string)으로 접근할 수 있습니다.
 
+----------------------------------------
+📘 참고: firebase 공식문서 [https://firebase.google.com/docs/database/unity/retrieve-data?hl=ko]
