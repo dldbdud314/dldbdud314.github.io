@@ -97,4 +97,4 @@ reference.ChildAdded += (object sender, ChildChangedEventArgs args) =>
 - 만약 reference보다 더 깊은 뎁스를 참조하고 싶으면 reference.Child(string)으로 접근할 수 있습니다.
 
 ----------------------------------------
-📘 참고: firebase 공식문서 [https://firebase.google.com/docs/database/unity/retrieve-data?hl=ko]
+📘 참고: [firebase 공식문서](https://firebase.google.com/docs/database/unity/retrieve-data?hl=ko)
