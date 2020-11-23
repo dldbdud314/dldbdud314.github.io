@@ -59,7 +59,7 @@ DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("ref
 [DataSnapshot](https://firebase.google.com/docs/reference/android/com/google/firebase/database/DataSnapshot)
 
 ## 2️⃣ 데이터 한번 읽기
-- GetValueAsync()를 활용하여 한번 읽을 수 있습니다. 이는 **비동기 메소드** 점을 유의해서 사용해주세요!!
+- GetValueAsync()를 활용하여 한번 읽을 수 있습니다. 이는 **비동기 메소드**라는 점을 유의해서 사용해주세요!! 이는 아래 2-1로 더 구체적으로 다뤄 보겠습니다.
 ```
 reference.GetValueAsync().ContinueWith(task => {
      if (task.IsFaulted) {
@@ -82,6 +82,30 @@ foreach(DataSnapshot data in snapshot.Children){
 ```
 - firebase의 데이터베이스는 json 형태로, 딕셔너리와 같이 key-value쌍으로 이루어져 있습니다.
 - Key 프로퍼티와 Value 프로퍼티를 활용하여 접근할 수 있습니다.
+
+### 2️⃣-1️⃣ 비동기 처리
+- 비동기 메소드는 반드시 순차적으로 실행되지 않습니다. 순차적으로 실행되는 것을 보장하기 위해서는 **async-await**을 활용해 봅시다.   
+✔ **How?**
+   * 오래 걸릴 가능성이 있는 비동기 메소드 앞에는 await 키워드를 붙이며, 해당 함수가 포함되어 있는 함수 앞에는 async 키워드를 붙여서 동기적으로 처리될 수 있도록 합니다.
+   * async 함수는 반드시 반환형이 void 또는 Task여야 합니다.
+   * 만약 반환형이 있는 함수라면, 그 반환형이 int인 경우 Task<int>와 같은 식으로 반환할 수 있습니다.
+- 위 함수를 동기적으로 처리하는 방식으로 바꿔보겠습니다. 만약 위 함수가 Start()에서 호출된다면,
+```
+async void Start(){
+  await reference.GetValueAsync().ContinueWith(task => {
+     if (task.IsFaulted) {
+       Debug.LogError("failed reading...");
+       return;
+     }
+     else if (task.IsCompleted) {
+       DataSnapshot snapshot = task.Result;
+       // 스냅샷을 이용하여 처리하기
+     }
+  });
+
+}
+```
+이런식으로 처리할 수 있습니다.
 
 ## 3️⃣ 이벤트 수신 대기
 - ChildAdded 이벤트에 대한 리스너
