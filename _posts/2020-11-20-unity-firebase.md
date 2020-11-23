@@ -54,8 +54,9 @@ DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("ref
 ![image](https://user-images.githubusercontent.com/57944099/99770279-eedd8000-2b4a-11eb-8ca7-87a9df1c01ef.png)
 - 이러한 이벤트는 리스너가 연결될 때 **한 번 호출된 후** 하위 데이터를 포함한 **데이터가 변경될 때마다 다시 호출**됩니다.   
 
-두 방식 모두 DataSnapshot을 활용하여 데이터를 처리합니다. 아래는 DataSnapshot에 해당 하는 다양한 메소트와 프로퍼티에 대한 공식 문서인데 참고하시면 되겠습니다.
-📘 [DataSnapshot](https://firebase.google.com/docs/reference/android/com/google/firebase/database/DataSnapshot)
+두 방식 모두 DataSnapshot을 활용하여 데이터를 처리합니다.    
+👇 아래는 DataSnapshot에 해당 하는 다양한 메소트와 프로퍼티에 대한 공식 문서인데 참고하시면 되겠습니다.   
+[DataSnapshot](https://firebase.google.com/docs/reference/android/com/google/firebase/database/DataSnapshot)
 
 ## 2️⃣ 데이터 한번 읽기
 - GetValueAsync()를 활용하여 한번 읽을 수 있습니다. 이는 **비동기 메소드** 점을 유의해서 사용해주세요!!
