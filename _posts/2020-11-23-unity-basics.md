@@ -1,5 +1,5 @@
 ---
-title: "여기저기서 긁어 모은  기본 개념 정리"
+title: "여기저기서 긁어 모은 Unity 기본 개념 정리"
 categories:
   - Unity
   - TIL
