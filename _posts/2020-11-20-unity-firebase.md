@@ -89,7 +89,8 @@ foreach(DataSnapshot data in snapshot.Children){
    * 오래 걸릴 가능성이 있는 비동기 메소드 앞에는 await 키워드를 붙이며, 해당 함수가 포함되어 있는 함수 앞에는 async 키워드를 붙여서 동기적으로 처리될 수 있도록 합니다.
    * async 함수는 반드시 반환형이 void 또는 Task여야 합니다.
    * 만약 반환형이 있는 함수라면, 그 반환형이 int인 경우 Task<int>와 같은 식으로 반환할 수 있습니다.
-- 위 함수를 동기적으로 처리하는 방식으로 바꿔보겠습니다. 만약 위 함수가 Start()에서 호출된다면,
+- 위 함수를 동기적으로 처리하는 방식으로 바꿔보겠습니다. 만약 위 함수가 Start()에서 호출된다면,   
+
 ```
 async void Start(){
   await reference.GetValueAsync().ContinueWith(task => {
@@ -104,10 +105,12 @@ async void Start(){
   });
 }
 ```
+
 이런식으로 처리할 수 있습니다.
 
 ## 3️⃣ 이벤트 수신 대기
 - ChildAdded 이벤트에 대한 리스너
+
 ```
 reference.ChildAdded += (object sender, ChildChangedEventArgs args) =>
  {
@@ -121,6 +124,7 @@ reference.ChildAdded += (object sender, ChildChangedEventArgs args) =>
       Debug.Log("이름: " + people["name"] + ", 나이: " + people["age"]);
 };
 ```
+
 - 만약 reference보다 더 깊은 뎁스를 참조하고 싶으면 reference.Child(string)으로 접근할 수 있습니다.
 
 ----------------------------------------
