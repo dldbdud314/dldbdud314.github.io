@@ -1,5 +1,5 @@
 ---
-title: "unity 처음 배우는 인간이 여기저기서 주워들은 기본 개념 정리"
+title: "여기저기서 긁어 모은  기본 개념 정리"
 categories:
   - Unity
   - TIL
