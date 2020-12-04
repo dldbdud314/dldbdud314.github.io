@@ -44,7 +44,7 @@ reference
     ㄴfirstGrandGrandChild : "lmnop"
     ㄴsecGrandGrandChild : "lmnop2"
 ```
-이렇게 중첩된 구조는 아래와 같이 접근하면 좋다.
+이렇게 중첩된 구조는 Snapshot.Children을 활용하여 아래와 같이 접근하면 좋다.
 ```
 void HandleChildAdded(object sender, ChildChangedEventArgs args)
 {
