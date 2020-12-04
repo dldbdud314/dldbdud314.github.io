@@ -66,3 +66,5 @@ void HandleChildAdded(object sender, ChildChangedEventArgs args)
      }
 }
 ```
+👇 다양하게 활용할 수 있으니 아래 공식 문서 참고해 보시길!!   
+[DataSnapshot](https://firebase.google.com/docs/reference/android/com/google/firebase/database/DataSnapshot)
